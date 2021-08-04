@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <body>
+        <input type="number" id="heightValue" value="1">
+        <input type="number" id="widthValue" value="1">
+        <div id="container">
+        </div>
+        <input id="builder" type="submit" onclick="makeRows();return false;">
+        <button onClick="window.location.reload();">Refresh Page</button>
+        <script src="gridBuilder.js"></script>
+    </body>
+</html>
+
+//css file
+   #container {
+    display: grid;
+    grid-gap: 1em;
+    grid-template-rows: repeat(var(--grid-rows), 1fr);
+    grid-template-columns: repeat(var(--grid-cols), 1fr);
+  }
+
+  .grid-item {
+    padding: 1em;
+    border: 1px solid #ddd;
+    text-align: center;
+  }
+
+
+//javascript file
+//gridBuilder.js
+const container = document.getElementById("container");
+
+function makeRows() {
+    var rows = document.getElementById("heightValue").value;
+    var cols = document.getElementById("widthValue").value;
+    container.style.setProperty('--grid-rows', rows);
+    container.style.setProperty('--grid-cols', cols);
+    for (c = 0; c < (rows * cols); c++) {
+        let cell = document.createElement("div");
+        cell.innerText = (c + 1);
+        container.appendChild(cell).className = "grid-item";
+    };
+};
+function myFunction() {
+    document.getElementById("container").reset();
+  }
+
