@@ -1,0 +1,11 @@
+console.log(/[.abc]/.test("1asdf"));
+console.log(/[a+b?!!1{4}]/.test("abcdeasdfasdf12393i49"));
+console.log(/.{3}a\.b/.test(".aaa.b"));
+console.log(/\w/.test("123easdf$"));
+console.log(/\s/.test(" "));
+console.log(/\d/.test("2"));
+console.log(/./.test("  "));
+console.log(/[abc]/.test("asdfasdf"));
+console.log(/(abc)/.test("123abc12f"));
+console.log(/\([0oOn]{1}(_|\s)[0oOn]{1}\)/.test("(o_n)"));
+console.log(/[a-zA-Z_\$\.]+[A-Za-z_\$0-9\.]*@[a-zA-Z_\$\.]+[a-zA-Z_\$0-9\.]*\.(com|net|org){1}/.test("nain.pedroza@intekglobal.com"));
