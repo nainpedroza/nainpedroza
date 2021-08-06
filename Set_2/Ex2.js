@@ -15,8 +15,8 @@ console.log(array);
 
 //2e
 var elearra = "Bee zapp Crow Eagle Zorro mouse Ape you"
-    cadena = elearra.split(' ')
-   var newar = [];
+var cadena = elearra.split(' ');
+var newar = [];
 for(let i=0; i<cadena.length; i++){
     var expresion = /[b-y]/gi;
     var array_emparejamientos = cadena[i].match(expresion);
@@ -25,7 +25,7 @@ for(let i=0; i<cadena.length; i++){
         newar.push(cadena[i]);
     }
 }
-console.log(newar);
+console.log(newar); // [ 'Bee', 'Crow', 'mouse', 'you' ]
 
 //2f
 var stri = "Is <b>4 < -1/12</b> true? The <b>answer</b> will <em>surprise</em> you."
