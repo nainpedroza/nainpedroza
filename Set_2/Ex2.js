@@ -30,8 +30,8 @@ console.log(newar);
 //2f
 var stri = "Is <b>4 < -1</b> true? The <b>answer</b> will <em>surprise</em> you."
 function checkTags(string){
-  var expresion = /<(\w+)>(\w+)<\/(\1)>/gmi;
-  var array_emparejamientos = string.match(expresion);
-  console.log(array_emparejamientos);
+  var expression = /<(\w+)>(\w+)<\/(\1)>/gmi;
+  var array = string.match(expression);
+  console.log(array);
 }
 checkTags(stri);//[ '<b>answer</b>', '<em>surprise</em>' ]
