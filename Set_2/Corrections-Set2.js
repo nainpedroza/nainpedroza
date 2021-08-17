@@ -22,6 +22,38 @@ function checkTags(string){
 }
 checkTags(stri); //[ '<b>4 < -1/12</b>', '<b>answer</b>', '<em>surprise</em>', '<b>#</b>' ]
 
+//3.B
+<!DOCTYPE html>
+<html>
+<body>
+
+<input id='texttobereplaced' value="ligula"> Insert text to be replaced</input>
+<button id="btn" id='replace' onclick="replace()">Replace</button>
+<div>
+    <p id="text">Lorem ipsum dolor sit amet consectetur, 
+        adipiscing elit vestibulum dictumst felis iaculis, 
+        malesuada mus consequat mollis. 
+        Tincidunt dignissim ultricies leo tempor proin justo neque 
+        eleifend torquent sodales, cursus potenti orci pharetra vestibulum 
+        ligula suscipit massa fusce nascetur malesuada, accumsan sagittis nisl 
+        placerat mauris nisi facilisis aliquet elementum. Lobortis ultricies 
+        rutrum laoreet a facilisi potenti suspendisse, interdum cras porttitor 
+        lacinia id commodo augue, neque purus molestie curae libero quam.
+    </p>
+</div>
+<script>
+    function replace(){
+        var paragraph = document.getElementById("text").textContent;
+        var text = document.getElementById("texttobereplaced").value;
+        var text2 = paragraph.replace(text, '#'+text)
+        text2 = paragraph.replace(text, '<a href="https://twitter.com/search?q="' +text+'>'+"#"+text+'</a>');
+        document.getElementById("text").innerHTML = text2;
+    }
+</script>
+
+</body>
+</html>
+
 //3.C
 function checkAnyPalindrome(str){
 var array = str.split(" ")
