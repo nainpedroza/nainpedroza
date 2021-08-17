@@ -177,6 +177,20 @@ function distance2(array){
 
 
 //Chapter 8 timers
+function a1() {
+  console.log('a');
+}
+function b1() {
+  console.log('b');
+}
+function c1() {
+  console.log('c');
+}
+var funcarray = [a1,b1,c1];
+var timings = [3000,6000,9000]
+for(let i=0; i<3; i++){
+  setInterval(funcarray[i],timings[i]);
+}
 
 //Chapter 9
 var str = '{prop1: 42, myFn: function(a,b){ return a+b+this.prop1;}}'
