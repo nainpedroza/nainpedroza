@@ -89,4 +89,7 @@ function dataType(array){
   }
 }
 
-dataType(1,6.2123123,"pi*2",[function(){}, 1], {}, function () {}); 
+dataType(1,6.2123123,"pi*2",[function(){}, 1], {}, function () {}); // number, float, string, array, object, function
+
+
+
