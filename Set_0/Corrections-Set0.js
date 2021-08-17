@@ -10,9 +10,8 @@ function add() {
 var answer2 = add(1,2) + add(1,2,4,6,7);
 answer2; //23
 
-//Ex4
+//Chapter3 - Ex4
 var data = new Array (1600); // 40 x 40 px dummy image data
-//Fill in data numbers 0-1599 in each pixel.
 for (let i=0; i<data.length; i++){
   data[i]=i;
 }
@@ -23,12 +22,12 @@ class Image{
     this.name = name;
     this.pixelData = 
       function(a,b){
-      var pData = 0;
-      var pixelPoint = a*b;
-      if (pixelPoint <= data.length){
-        for (let i=0; i<a*b; i++){
-          pData = data[i]
-        }
+      	var pData = 0;
+     	var pixelPoint = a*b;
+      	if (pixelPoint <= data.length){
+           for (let i=0; i<a*b; i++){
+              pData = data[i]
+           }
         return pData;
       }
       else{
@@ -56,7 +55,7 @@ function sum(array) {
 
 sum([1,2,3,4]); // 10
 
-//Ex3
+//Chapter 4 - Ex3
 class CustomObject {
     constructor(value){
         if (typeof value === 'number'){
@@ -72,7 +71,7 @@ obj1; //value: 2
 var obj2 = new CustomObject("hello"); // It is not a number
 obj2; // error in console
 
-//Ex4
+//Chapter 4 - Ex4
 var isInt = function(n) { return parseInt(n) === n };
 
 function dataType(array){
@@ -91,7 +90,7 @@ function dataType(array){
 
 dataType(1,6.2123123,"pi*2",[function(){}, 1], {}, function () {}); // number, float, string, array, object, function
 
-//Ex5
+//Chapter 4 - Ex5
 function distance(array){
   if(arguments.length<3){
     return "Insufficient parameters"
@@ -119,7 +118,7 @@ var delta2 = distance (x1, y1, z1, x2, y2, z2);
 delta2; //3.1622776601683795
 distance (x1, x2); //Insufficient parameters
 
-//Ex6
+//Chapter 4 - Ex6
 function distance2(array){
   var p = [];
   if(typeof array == 'object'){
@@ -171,10 +170,10 @@ function distance2(array){
   }
 }
 
-
+//Chapter 5 bank building
 
 //Chapter 6
-//I createda class call anotherRegularPolygon!
+//I created a class call anotherRegularPolygon!
 
 
 //Chapter 8 timers
@@ -306,6 +305,7 @@ var myLib = {
      }
 };
 
+//Simplified without the with statement
 const real = myLib.math.real
 const complex = myLib.math.complex
 const matrix = myLib.math.matrix
@@ -324,13 +324,14 @@ var ans = matrix.times(
       );
 answer;
 ans;
+
 //Chapter 12 
+//prtAttr
 
 
 
 
-
-
+//Chapter 13 Ex1
 
 //Chapter 13 Ex2
 <!DOCTYPE html>
@@ -338,7 +339,7 @@ ans;
 <head>
 <script>
   var clicks = 0;
-function onClick() {
+  function onClick() {
   clicks += 1;
   meter.value = clicks;
   if(clicks<=2){
@@ -358,6 +359,7 @@ function onClick() {
 </html>
 
 
+//Chapter14 - Ex1
 
 //Chapter14 - Ex2
 <!DOCTYPE html>
