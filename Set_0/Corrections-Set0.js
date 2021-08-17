@@ -170,3 +170,46 @@ function distance2(array){
     }
   }
 }
+
+
+//Chapter 9
+var str = '{prop1: 42, myFn: function(a,b){ return a+b+this.prop1;}}'
+function dataParse(str) { return eval(`(${str})`); }
+dataParse(str);//{ prop1: 42, myFn: [Function: myFn] }
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Chapter 13 Ex2
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+  var clicks = 0;
+function onClick() {
+  clicks += 1;
+  meter.value = clicks;
+  if(clicks<=2){
+    document.getElementById("clicks").textContent = clicks;
+  }
+  else{
+    document.getElementById("btn").disabled = true;
+  }
+}
+</script>
+
+<button type="button" id="btn" onClick="onClick()">Click me</button>
+<p>
+    <meter id="meter" max="3.0" min="0.0" value="0" high=".75" low=".25" optimum="0.5"></meter>
+</p>
+</head>
+</html>
