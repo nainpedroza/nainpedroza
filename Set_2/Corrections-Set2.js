@@ -32,7 +32,7 @@ checkTags(stri); //[ '<b>4 < -1/12</b>', '<b>answer</b>', '<em>surprise</em>', '
 <div>
     <p id="text">Lorem ipsum dolor sit amet consectetur, 
         adipiscing elit vestibulum dictumst felis iaculis, 
-        malesuada mus consequat mollis. 
+        malesuada mus consequat mollis. amet amet amet
         Tincidunt dignissim ultricies leo tempor proin justo neque 
         eleifend torquent sodales, cursus potenti orci pharetra vestibulum 
         ligula suscipit massa fusce nascetur malesuada, accumsan sagittis nisl 
@@ -45,9 +45,20 @@ checkTags(stri); //[ '<b>4 < -1/12</b>', '<b>answer</b>', '<em>surprise</em>', '
     function replace(){
         var paragraph = document.getElementById("text").textContent;
         var text = document.getElementById("texttobereplaced").value;
-        var text2 = paragraph.replace(text, '#'+text)
-        text2 = paragraph.replace(text, '<a href="https://twitter.com/search?q="' +text+'>'+"#"+text+'</a>');
-        document.getElementById("text").innerHTML = text2;
+        var expression = new RegExp("\s*(\\b"+text+"\\b)\s*", 'gmi')
+        var expressionhashed = new RegExp("\s*(#\\b"+text+"\\b)\s*","gmi")
+        if(expressionhashed.test(paragraph)){
+            var paragraph = document.getElementById("text").textContent;
+            var text = document.getElementById("texttobereplaced").value;
+        }
+        else if(expression.test(paragraph)){
+
+            text2 = paragraph.replaceAll(text, '<a href=https://twitter.com/search?q=' +text+'>'+"#"+text+'</a>');
+            document.getElementById("text").innerHTML = text2;
+        }
+        else{
+            document.getElementById("text").innerHTML = text2;
+        }
     }
 </script>
 
