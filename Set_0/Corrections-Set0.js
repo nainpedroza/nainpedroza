@@ -187,7 +187,7 @@ function c1() {
   console.log('c');
 }
 var funcarray = [a1,b1,c1];
-var timings = [3000,6000,9000]
+var timings = [30000,60000,75000]
 for(let i=0; i<3; i++){
   setInterval(funcarray[i],timings[i]);
 }
@@ -367,6 +367,66 @@ function printAttr(){
 
 
 //Chapter 13 Ex1
+<!DOCTYPE html>
+<html>
+<head>
+<div id='grid-template' class='clase'></div>
+<script>
+var lastClicked;
+var grid = clickableGrid(5,5,function(el){
+    if (lastClicked) lastClicked.className='';
+    lastClicked = el;
+});
+
+
+
+document.body.appendChild(grid);
+     
+function clickableGrid( rows, cols, callback ){
+    var i=0;
+    var grid = document.createElement('table');
+    grid.className = 'grid';
+    grid.id = 'grid-id';
+    for (var r=0;r<rows;r++){
+        var tr = grid.appendChild(document.createElement('tr'));
+        tr.id = 'tr'
+        for (var c=0;c<cols;++c){
+            var temp = i;
+            var cell = tr.appendChild(document.createElement('td'));
+            cell.id = 'td'+temp;
+            cell.className = temp;
+            cell.textContent = ++i-1;
+            //cell.innerHTML = ++i-1;          
+        }
+    }
+    return grid;
+}
+const gridfragment = document.getElementById('grid-id');
+
+(()=>{
+    gridfragment.addEventListener("click", delegation);
+})();
+
+function delegation(e){
+    var cellNumber = e.target.textContent;
+    var x = document.getElementById(e.target.id);
+    x.style.opacity = "1";
+    x.textContent = cellNumber;
+
+}
+</script>
+<style>
+.grid { margin:1em auto; border-collapse:collapse }
+td {
+    cursor:pointer;
+    width:30px; height:30px;
+    border:1px solid #ccc;
+    text-align:center;
+    opacity: 0;
+    font-family:sans-serif; font-size:13px
+}
+</style>
+</html>
 
 //Chapter 13 Ex2
 <!DOCTYPE html>
