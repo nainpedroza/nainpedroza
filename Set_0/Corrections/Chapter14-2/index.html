@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="p2">Lorem ipsum dolor sit amet consectetur, 
+    adipiscing elit vestibulum dictumst felis iaculis, 
+    malesuada mus consequat mollis. 
+    Tincidunt dignissim ultricies leo tempor proin justo neque 
+    eleifend torquent sodales, cursus potenti orci pharetra vestibulum 
+    ligula suscipit massa fusce nascetur malesuada, accumsan sagittis nisl 
+    placerat mauris nisi facilisis aliquet elementum. Lobortis ultricies 
+    rutrum laoreet a facilisi potenti suspendisse, interdum cras porttitor 
+    lacinia id commodo augue, neque purus molestie curae libero quam.
+</p>
+<div id="buttons">
+    <button class="two" type="submit" onclick=event>2 columns</button>
+    <button class="three" type="submit" >3 columns</button>
+    <button class="four" type="submit" >4 columns</button>
+</div>
+
+<script>
+        var p = document.getElementById("p2");
+        var x = document.getElementById("buttons")
+        x.addEventListener('click', event => { 
+            if (event.target.className === 'two') { 
+                let numCols = 2;
+                p.style.columnWidth = 1000/numCols + "px"
+            }
+            if (event.target.className === 'three') { 
+                let numCols = 3;
+                p.style.columnWidth = 1000/numCols + "px"
+            }
+            if (event.target.className === 'four') { 
+                let numCols = 4;
+                p.style.columnWidth = 1000/numCols + "px"
+            }
+        });
+</script>
+
+</body>
+</html>
