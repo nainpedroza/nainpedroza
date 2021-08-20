@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function printAttr(){
+    var el = document.getElementsByTagName("div")[0];
+    function printAttr2(el, array){
+        for(let i=0; i<array.length; i++){
+            if(el.hasAttribute(array[i])){
+                alert(el.getAttribute(array[i]));
+            }
+            else{
+                alert("This attribute is not in you element");
+            }
+        }
+    }
+    printAttr2(el,['id','class','style','val']);
+}
+</script>
+<div id='a' class='square' style='display:inline-block' val='something important'></div>
+<button type="button" id="btn" onClick="printAttr()">Print Attributes</button></head>
+</html>
