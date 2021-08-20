@@ -100,7 +100,7 @@ form button:hover {
     cursor: pointer;
 }
 
-.delete-btn del{
+.delete-btn {
     background-color: green;
 }
 
