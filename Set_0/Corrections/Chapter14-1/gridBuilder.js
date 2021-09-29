@@ -3,7 +3,7 @@ const entry = document.getElementsByTagName('input')
 function makeRows() {
     var rows = document.getElementById("heightValue").value;
     var cols = document.getElementById("widthValue").value;
-  container.innerHTML = ''
+    container.innerHTML = ''
     container.style.setProperty('--grid-rows', rows);
     container.style.setProperty('--grid-cols', cols);
     for (c = 0; c < (rows * cols); c++) {
