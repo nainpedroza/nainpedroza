@@ -6,11 +6,13 @@ function makeRows() {
     container.innerHTML = ''
     container.style.setProperty('--grid-rows', rows);
     container.style.setProperty('--grid-cols', cols);
+    let fragment = new DocumentFragment();
     for (c = 0; c < (rows * cols); c++) {
         let cell = document.createElement("div");
         cell.innerText = (c + 1);
-        container.appendChild(cell).className = "grid-item";
+        fragment.appendChild(cell).className = "grid-item";
     };
+    container.appendChild(fragment);
 };
 function reset() {
    container.innerHTML = ''
