@@ -12,15 +12,12 @@ class Image{
             this.data = data;
         }
     else{ 
-      return ("The width and height do not match the array");
+      throw new Error ("The width and height do not match the array");
     }
   }
   pixelData(x,y){
     if(x*y <= data.length){
-      return this.data[x*y-1];
-    }
-    else{
-      return "The pixel is outside the boundaries of the image";
+      return this.data[this.height*x + y];
     }
   }
 }
@@ -28,4 +25,5 @@ var img = new Image (data, 40, 40, 'myImage');
 img.width; // 40
 img.height; // 40
 img.name; // ‘myImage’
-img.pixelData (20,4); //79
+img.pixelData (20,4); //804
+img.pixelData (4,20); //180
