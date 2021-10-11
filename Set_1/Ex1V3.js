@@ -13,33 +13,26 @@ function sort(array,option){
     }
     else{
         function countCons(str) { 
-            var count = str.match(/[^aeiou]/gi);
-            if (count==null) return 0;
-            else
-                count = str.match(/[^aeiou]/gi).length
-            return count;
+            let cons = "bcdfghjklmnpqrstvwxyz";
+            str = str.toLowerCase();
+            let counter = 0;
+            for (let letter of str){
+              if(cons.indexOf(letter)>=0){ 
+                counter++;
+              }
+            }
+          return counter;
         } 
-        var ind = [];
-        var newa = [];
-        for(let i=0;i<array.length;i++){
-            ind[i] = countCons(array[i]);
-            newa.push(ind[i]+array[i]);
-        }
         if(option == 'byCons-a'){
-            var newarr = newa.sort();
-          for(let i=0;i<newa.length;i++){
-            newarr[i] = newarr[i].substring(1);
-          }
+          var newarr = array.sort(function(a,b){return countCons(a) - countCons(b)}) ;
         }
         if(option == 'byCons-d'){
-            var newarr = newa.sort().reverse();
-          for(let i=0;i<newa.length;i++){
-            newarr[i] = newarr[i].substring(1);
-          }
+          var newarr = array.sort(function(a,b){return countCons(b) - countCons(a)}) ;
         }
     }
     return newarr;
 }
+
 sort(['lightning','cases','bye','zzzzzzzzza','a','za'],'a'); //[ 'a', 'bye', 'cases', 'lightning', 'za', 'zzzzzzzzza' ]
 sort(['lightning','cases','bye','zzzzzzzzza','a','za'],'a'); //[ 'zzzzzzzzza', 'za', 'lightning', 'cases', 'bye', 'a' ]
 sort(['lightning','cases','bye','zzzzzzzzza','a','za'],'byLength-d'); //[ 'zzzzzzzzza', 'lightning', 'cases', 'bye', 'za', 'a' ]
