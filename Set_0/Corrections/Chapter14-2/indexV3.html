@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p id="p2">Lorem ipsum dolor sit amet consectetur, 
+    adipiscing elit vestibulum dictumst felis iaculis, 
+    malesuada mus consequat mollis. 
+    Tincidunt dignissim ultricies leo tempor proin justo neque 
+    eleifend torquent sodales, cursus potenti orci pharetra vestibulum 
+    ligula suscipit massa fusce nascetur malesuada, accumsan sagittis nisl 
+    placerat mauris nisi facilisis aliquet elementum. Lobortis ultricies 
+    rutrum laoreet a facilisi potenti suspendisse, interdum cras porttitor 
+    lacinia id commodo augue, neque purus molestie curae libero quam.
+    Lorem ipsum dolor sit amet consectetur, 
+    adipiscing elit vestibulum dictumst felis iaculis, 
+    malesuada mus consequat mollis. 
+    Tincidunt dignissim ultricies leo tempor proin justo neque 
+    eleifend torquent sodales, cursus potenti orci pharetra vestibulum 
+    ligula suscipit massa fusce nascetur malesuada, accumsan sagittis nisl 
+    placerat mauris nisi facilisis aliquet elementum. Lobortis ultricies 
+    rutrum laoreet a facilisi potenti suspendisse, interdum cras porttitor 
+    lacinia id commodo augue, neque purus molestie curae libero quam.
+    Lorem ipsum dolor sit amet consectetur, 
+    adipiscing elit vestibulum dictumst felis iaculis, 
+    malesuada mus consequat mollis. 
+    Tincidunt dignissim ultricies leo tempor proin justo neque 
+    eleifend torquent sodales, cursus potenti orci pharetra vestibulum 
+    ligula suscipit massa fusce nascetur malesuada, accumsan sagittis nisl 
+    placerat mauris nisi facilisis aliquet elementum. Lobortis ultricies 
+    rutrum laoreet a facilisi potenti suspendisse, interdum cras porttitor 
+    lacinia id commodo augue, neque purus molestie curae libero quam.
+    Lorem ipsum dolor sit amet consectetur, 
+    adipiscing elit vestibulum dictumst felis iaculis, 
+    malesuada mus consequat mollis. 
+    Tincidunt dignissim ultricies leo tempor proin justo neque 
+    eleifend torquent sodales, cursus potenti orci pharetra vestibulum 
+    ligula suscipit massa fusce nascetur malesuada, accumsan sagittis nisl 
+    placerat mauris nisi facilisis aliquet elementum. Lobortis ultricies 
+    rutrum laoreet a facilisi potenti suspendisse, interdum cras porttitor 
+    lacinia id commodo augue, neque purus molestie curae libero quam.
+</p>
+    <div class="content"></div>
+</div>
+<div id="buttons">
+    <button class="two" type="submit" >2 columns</button>
+    <button class="three" type="submit" >3 columns</button>
+    <button class="four" type="submit" >4 columns</button>
+</div>
+
+<script>
+        var clicked2 = false, clicked3 = false, clicked4 = false;
+        var originalP = document.getElementById("p2");
+        var x = document.getElementById("buttons")
+        var content = document.querySelector('.content')
+        content.style.display = "flex"
+        x.addEventListener('click', event => { 
+            if (event.target.className === 'two') { 
+                divideParagraph(2)
+            }
+            if (event.target.className === 'three') { 
+                divideParagraph(3);
+            }
+            if (event.target.className === 'four') { 
+                divideParagraph(4)
+            }
+        });
+        function divideParagraph(n){
+            var data = originalP.textContent;
+            var smallerText = data.length/n;
+            var tempdata;
+            content.textContent = '';
+            for(let i=0; i <= n-1; i++){
+                tempdata = data.slice(i*smallerText,(i+1)*smallerText);
+                p = document.createElement('p');
+                p.textContent = tempdata;
+                p.style.backgroundColor = "violet";
+                p.style.width = String(100/n) + "%";
+                content.appendChild(p);
+            }
+        }
+</script>
+
+</body>
+</html>
