@@ -1,5 +1,5 @@
 //2.A
-console.log(/(january|february|march|april|may|june|july|august|september|october|november|december) \d{2},\ \d{4}$/gmi.test("January 11, 2001")); //True
+console.log(/(\b\d{1,2}\D{0,3})?\b((Jan|Febr)(?:uary)?|March|April|May|June|July|August|Sep(?:tember)?|Oct(?:ober)?|(Nov|Dec)(?:ember)?) \d{2},\ \d{4}$/gmi.test("November 11, 2001")); //True
 
 //2.E
 var string = "Bee zapp Crow Eagle Zorro mouse Ape you"
