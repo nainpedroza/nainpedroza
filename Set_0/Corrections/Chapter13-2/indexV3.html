@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<script>
+    var clicks = 0;
+    function onClick() {
+        clicks += 1;
+        meter.value = clicks;
+        if(clicks<=2){
+            document.getElementById("clicks").textContent = clicks;
+        }
+        else{
+            document.getElementById("btn").disabled = true;
+        }
+    }
+</script>
+
+<button type="button" id="btn" onClick="onClick()">Click me</button>
+<p>
+    <meter id="meter" max="3.0" min="0.0" value="0" high=".75" low=".25" optimum="0.5"></meter>
+</p>
+
+</html>
