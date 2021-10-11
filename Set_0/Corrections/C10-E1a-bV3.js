@@ -36,7 +36,7 @@ var myLib = {
                                    },
         matrix: {
           add: function (a, b){           
-            if(a.length != b.length){console.error("Not possible to sum up two matrices of difference size")}
+            if(a.length != b.length){throw new Error("Not possible to sum up two matrices of difference size")}
             var temp2 = [];
             for(var i=0; i<a.length; i++) {
                 temp2[i] = new Array(a.length);
@@ -50,7 +50,7 @@ var myLib = {
           return temp2;
           },
           sub: function (a, b){
-            if(a.length != b.length){console.error("Not possible to substract up two matrices of difference size")}
+            if(a.length != b.length){throw new Error("Not possible to substract up two matrices of difference size")}
             var temp2 = [];
             for(var i=0; i<a.length; i++) {
                 temp2[i] = new Array(a.length);
@@ -64,7 +64,7 @@ var myLib = {
           return temp2;
           },
           mul: function (a, b){
-            if(a.length != b.length){console.error("Not possible to multiply up two matrices of difference size")}
+            if(a.length != b.length){throw new Error("Not possible to multiply up two matrices of difference size")}
             var temp2 = [];
             for(var i=0; i<a.length; i++) {
                 temp2[i] = new Array(a.length);
@@ -83,7 +83,7 @@ var myLib = {
           eye: function (size){ var a = Array.apply(null, new Array(size)); return a.map(function(x, i) { return a.map(function(y, k) { return i == k ? 1 : 0; }) }) },
           dot: function (m, a){
               let c = [];
-              if (m.length != a.length){ console.error("Not possible to evaluate dot product")}
+              if (m.length != a.length){throw new Error("Not possible to evaluate dot product")}
               for(var i=0; i<m.length; i++){
                   var sum = 0;
                   for(var j=0; j<m.length; j++){
