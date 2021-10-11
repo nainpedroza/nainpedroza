@@ -31,13 +31,13 @@ let building = {'floors':{'lobby':{'employee':['Alice','Bob','Lydia'], 'equipmen
 function getInfo(){
     let memo = {};
     function search(idx){
-        if (Object.keys(memo).indexOf(idx) >= 0){
+        if(memo[idx]){
             return memo[idx];
         }
         let searchValue = {};
-        if (Object.keys(building['employee']).indexOf(idx) >= 0){
+        if (building['employee'][idx]){
             searchValue = building['employee'][idx];
-        } else if (Object.keys(building['equipment']).indexOf(idx) >= 0){
+        } else if (building['equipment'][idx]){
             searchValue = building['equipment'][idx];
         }
         if (Object.keys(searchValue).length > 0){
