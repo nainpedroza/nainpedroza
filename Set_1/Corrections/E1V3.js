@@ -1,4 +1,3 @@
-//1
 function sort(array,option){
     if(option=='d'){
         var newarr = array.sort().reverse();
@@ -14,22 +13,25 @@ function sort(array,option){
     }
     else{
         function countCons(str) { 
-            var count = str.match(/[^aeiou]/gi);
-            if (count==null) return 0;
-            count = count.length;
-            return count;
+            let consonants = "bcdfghjklmnpqrstvwxyz";
+            str = str.toLowerCase();
+            let counter = 0;
+            for (let l of str){
+              if(consonants.indexOf(l)>=0){ 
+                counter++;
+              }
+            }
+          return counter;
         } 
         if(option == 'byCons-a'){
-            var newarr = array.sort(function(a,b){return a.length-b.length})
-            }
-        if(option == 'byCons-d'){
-           var newarr = array.sort(function(a,b){return b.length-a.length}) 
+          var newarr = array.sort(function(a,b){return countCons(a)- countCons(b)}) ;
         }
-
+        if(option == 'byCons-d'){
+          var newarr = array.sort(function(a,b){return countCons(b)- countCons(a)}) ;
+        }
     }
     return newarr;
 }
-
 sort(['lightning','cases','bye','zzzzzzzzza','a','za'],'a'); //[ 'a', 'bye', 'cases', 'lightning', 'za', 'zzzzzzzzza' ]
 sort(['lightning','cases','bye','zzzzzzzzza','a','za'],'d'); //[ 'zzzzzzzzza', 'za', 'lightning', 'cases', 'bye', 'a' ]
 sort(['lightning','cases','bye','zzzzzzzzza','a','za'],'byLength-d'); //[ 'zzzzzzzzza', 'lightning', 'cases', 'bye', 'za', 'a' ]
