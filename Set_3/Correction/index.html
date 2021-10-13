@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>My Notes</h1>
+            <form action="">
+                <div class="dates"><p class="creation"></p> <p class="modified"></p></div>
+                <input type="text" id="note-title" placeholder="Note title">
+                <textarea id="note-text" placeholder="Note Details"></textarea>
+                <button id="add-btn">Add Note</button>
+                <div class="btnMenu">
+                    <button class="e-Btn">Save changed note</button>
+                    <button class="can-Btn">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </header>
+    <div class="notes-container"></div>
+    <template id="notes">
+        <div class="note">
+            <p class="title"></p>
+            <p class="noteinfo"></p>
+            <div class="buttons">
+                <button class="view-btn">View</button>
+                <button class="edit-btn">Edit</button>
+                <button class="delete-btn">Delete</button>
+            </div>
+        </div>
+    </template>
+    <script src="script.js"></script>
+</body>
+</html>
