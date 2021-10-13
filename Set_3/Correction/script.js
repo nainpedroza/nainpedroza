@@ -105,7 +105,7 @@ function displayNotes(){
       if(i!=='0'){
           let temp = document.querySelector('#notes');
           let div = temp.content.querySelector('.note');  
-          let p = div.querySelector('p');
+          let p = div.querySelector('p.title');
           let p2 = div.querySelector('p.noteinfo');
           let buttons = div.querySelector('.buttons');
           let erraseB = buttons.querySelector('.delete-btn');
