@@ -16,6 +16,7 @@ class Image{
     }
   }
   pixelData(x,y){
+    if( x>this.width || y>this.height){throw new Error( "The dimensions do not match the size of the image")}
     if(x*y <= data.length){
       return this.data[this.height*x + y];
     }
@@ -27,3 +28,4 @@ img.height; // 40
 img.name; // ‘myImage’
 img.pixelData (20,4); //804
 img.pixelData (4,20); //180
+img.pixelData(80,2); //Error: The dimensions do not match the size of the image
