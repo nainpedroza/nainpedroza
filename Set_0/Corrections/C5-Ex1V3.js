@@ -3,13 +3,13 @@ class Client{
         this.name = name;
         this.cash = cash;
         this.account = account;
-      this.bankName = bankName;
+        this.bankName = bankName;
     }
     deposit(amount, receptorAccount){
         if (amount < 0){
-            console.log('Only positive quantities are allowed');
+            throw ('Only positive quantities are allowed');
         }else if(this.cash < amount){
-            console.log('You do not have enough money');
+            throw ('You do not have enough money');
         } else{
             bank.deposit(amount, receptorAccount);
             this.cash -= amount;
